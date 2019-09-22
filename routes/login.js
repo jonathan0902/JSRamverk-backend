@@ -1,6 +1,10 @@
 var express = require('express');
 const jwt = require('jsonwebtoken');
 var router = express.Router();
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
 
 router.post('/', function(req, res, next) {
     let data = {
