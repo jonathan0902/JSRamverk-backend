@@ -9,8 +9,6 @@ router.post('/', function(req, res, next) {
         }
     };
 
-    response.set('Access-Control-Allow-Origin', '*');
-
     const sqlite3 = require('sqlite3').verbose();
     const db = new sqlite3.Database('./db/texts.sqlite');
     var params =[req.body.email, req.body.password]
