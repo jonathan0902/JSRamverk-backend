@@ -10,7 +10,7 @@ const login = require('./routes/login');
 const bodyParser = require("body-parser");
 
 const app = express();
-const port = 1337;
+const port = 8333;
 
 app.use(cors());
 app.use(bodyParser.json());
