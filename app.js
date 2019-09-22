@@ -22,13 +22,6 @@ if (process.env.NODE_ENV !== 'test') {
     app.use(morgan('combined')); // 'combined' outputs the Apache style LOGs
 }
 
-app.options('/login', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Methods', '*');
-    res.setHeader("Access-Control-Allow-Headers", "*");
-    res.end();
-});
-
 app.use('/', index);
 app.use('/hello', hello);
 app.use('/reports/week', week1);
@@ -59,6 +52,12 @@ app.use((err, req, res, next) => {
             }
         ]
     });
+});
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 app.listen(port, () => console.log(`Example API listening on port ${port}!`));
