@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    birthday VARCHAR(10) NOT NULL,
+    UNIQUE(email)
+);
+
+CREATE TABLE IF NOT EXISTS report (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   tx text NOT NULL
+);
+
+INSERT INTO report (tx) VALUES ('Hej alle igoap');
