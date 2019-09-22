@@ -9,6 +9,7 @@ const report = require('./routes/report');
 const jwt = require('jsonwebtoken');
 const bodyParser = require("body-parser");
 
+var router = express.Router();
 const app = express();
 const port = 8333;
 
