@@ -1,6 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const index = require('./routes/index');
+const hello = require('./routes/hello');
+const week1 = require('./routes/week1');
+const register = require('./routes/register');
+const report = require('./routes/report');
+const login = require('./routes/login');
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = 8333;
@@ -14,14 +21,6 @@ if (process.env.NODE_ENV !== 'test') {
     // use morgan to log at command line
     app.use(morgan('combined')); // 'combined' outputs the Apache style LOGs
 }
-
-const index = require('./routes/index');
-const hello = require('./routes/hello');
-const week1 = require('./routes/week1');
-const register = require('./routes/register');
-const report = require('./routes/report');
-const login = require('./routes/login');
-const bodyParser = require("body-parser");
 
 app.use('/', index);
 app.use('/hello', hello);
