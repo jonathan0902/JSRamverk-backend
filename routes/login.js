@@ -1,5 +1,6 @@
 var express = require('express');
 const jwt = require('jsonwebtoken');
+const unused = require('dotenv').config();
 var router = express.Router();
 
 router.post('/', function(req, res, next) {
