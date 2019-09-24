@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
         }
 
         const payload = { email: req.body.email };
-        const secret = process.env.JWT_SECRET;
+        const secret = 'ddasdasdasdashhjkkcascjajskckjasckascja';
 
         const token = jwt.sign(payload, secret, { expiresIn: '1h'});
         res.setHeader('x-access-token', token);
