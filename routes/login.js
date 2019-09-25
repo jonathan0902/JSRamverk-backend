@@ -24,11 +24,9 @@ router.post('/', function(req, res, next) {
                 res.status(400).json({"error":err.message});
                 return;
             }
-
-            if(res) {
-
+            if (!res) {
+                break;
             }
-            res.json({"message":'Authentication Failed!'});
         });
 
         const payload = { email: req.body.email };
