@@ -26,21 +26,22 @@ router.post('/', function(req, res, next) {
             }
 
             if(res) {
-                const payload = { email: req.body.email };
-                const secret = process.env.JWT_SECRET;
-        
-                const token = jwt.sign(payload, secret, { expiresIn: '1h'});
-                res.setHeader('x-access-token', token);
-        
-                res.json({
-                    success: true,
-                    message: 'Authentication successful!',
-                    token: token
-                })  
+
             }
             res.json({"message":'Authentication Failed!'});
         });
 
+        const payload = { email: req.body.email };
+        const secret = process.env.JWT_SECRET;
+
+        const token = jwt.sign(payload, secret, { expiresIn: '1h'});
+        res.setHeader('x-access-token', token);
+
+        res.json({
+            success: true,
+            message: 'Authentication successful!',
+            token: token
+        })  
     })
 });
 
