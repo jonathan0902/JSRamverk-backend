@@ -99,6 +99,7 @@ router.get('/auth/',
     }
 
     function authUser(res, req) {
+        console.log("tesafasfsafasfa")
             res.json({
                 "message": "success",
                 "data": true,
