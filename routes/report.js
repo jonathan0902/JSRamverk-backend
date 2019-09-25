@@ -32,12 +32,12 @@ router.get('/all/', function(req, res, next) {
     })
 });
 
+router.get('/auth/',
+    (req, res, next) => checkToken(req, res, next),
+    (req, res) => authUser(res, req.body));
+
     function checkToken(req, res, next) {
         const token = req.headers['x-access-token'];
-
-        console.log(req.headers)
-
-        console.log(token)
 
         jwt.verify(token, process.env.JWT_SECRET, (err, decoded)  => {
             if(err){
@@ -96,6 +96,13 @@ router.get('/all/', function(req, res, next) {
                 "id" : this.lastID
             })
         })
+    }
+
+    function authUser(res, req) {
+            res.json({
+                "message": "success",
+                "data": true,
+            })
     }
 
 module.exports = router;
