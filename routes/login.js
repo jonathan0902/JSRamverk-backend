@@ -4,12 +4,6 @@ var router = express.Router();
 const bcrypt = require('bcryptjs');
 
 router.post('/', function(req, res, next) {
-    let data = {
-        data: {
-            msg: ""
-        }
-    };
-
     const sqlite3 = require('sqlite3').verbose();
     const db = new sqlite3.Database('./db/texts.sqlite');
     var params =[req.body.email]
@@ -44,6 +38,7 @@ router.post('/', function(req, res, next) {
                     token: token
                 })  
             }
+            res.json({"message":'Authentication Failed!'});
         });
 
     })
