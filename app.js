@@ -26,7 +26,7 @@ app.use('/', index);
 app.use('/hello', hello);
 app.use('/reports/week', week1);
 app.use('/register', register);
-app.use('/report', report);
+app.use('/reports', report);
 app.use('/login', login);
 
 // Add routes for 404 and error handling

@@ -10,13 +10,7 @@ router.post('/add/',
     (req, res, next) => checkToken(req, res, next),
     (req, res) => addReport(res, req.body));
 
-router.get('/all/', function(req, res, next) {
-    let data = {
-         data: {
-            msg: ""
-         }
-    };
-    console.log("Test")
+router.get('/', function(req, res, next) {
     const sqlite3 = require('sqlite3').verbose();
     const db = new sqlite3.Database('./db/texts.sqlite');
     
