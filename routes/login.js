@@ -24,9 +24,6 @@ router.post('/', function(req, res, next) {
                 res.status(400).json({"error":err.message});
                 return;
             }
-            if (!res) {
-                break;
-            }
         });
 
         const payload = { email: req.body.email };
