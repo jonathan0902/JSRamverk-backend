@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "bash db/reset_test_db.bash",
     "start": "node app.js",
-    "production": "NODE_ENV='production' node app.js"
+    "production": "NODE_ENV='production' node app.js",
+    "test": "nyc --reporter=html --reporter=text --reporter=clover mocha --timeout 10000",
+    "eslint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +20,16 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
     "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.15.1",
+    "javascript-style-guide": "^1.0.1",
+    "jest": "^24.9.0",
+    "mocha": "^6.2.1",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2"
   }
 }
