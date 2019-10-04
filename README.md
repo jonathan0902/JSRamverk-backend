@@ -1,0 +1,3 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jonathan0902/JSRamverk-backend/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jonathan0902/JSRamverk-backend/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/jonathan0902/JSRamverk-backend/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jonathan0902/JSRamverk-backend/build-status/master)
+[![Build Status](https://travis-ci.org/jonathan0902/JSRamverk-backend.svg?branch=master)](https://travis-ci.org/jonathan0902/JSRamverk-backend)
