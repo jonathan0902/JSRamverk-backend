@@ -6,6 +6,7 @@ const week1 = require('./routes/week1');
 const register = require('./routes/register');
 const report = require('./routes/report');
 const login = require('./routes/login');
+const chat = require('./routes/chat');
 const bodyParser = require("body-parser");
 
 require('dotenv').config();
@@ -28,6 +29,7 @@ app.use('/reports/week', week1);
 app.use('/register', register);
 app.use('/reports', report);
 app.use('/login', login);
+app.use('/chat', chat);
 
 // Add routes for 404 and error handling
 // Catch 404 and forward to error handler
